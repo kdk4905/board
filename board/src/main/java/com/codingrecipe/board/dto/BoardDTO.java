@@ -3,6 +3,10 @@ package com.codingrecipe.board.dto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.web.multipart.MultipartFile;
+
+//0728
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +22,7 @@ public class BoardDTO {
     private String createdAt;
     //0727 추가
     private int fileAttached;
+    //0728 추가
+    //스프링에서 제공하는 인터페이스
+    private List<MultipartFile> boardFile;
 }

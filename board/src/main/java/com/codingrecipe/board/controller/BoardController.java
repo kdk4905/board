@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -27,8 +28,7 @@ public class BoardController {
     //Post 매핑
     //데이터를 제출하는 요청 연결
     @PostMapping("/save")
-    public String save(BoardDTO boardDTO)
-    {
+    public String save(BoardDTO boardDTO) throws IOException {
         System.out.println("boardDTO = " + boardDTO);
         boardService.save(boardDTO);
         return "redirect:/list";

@@ -1,6 +1,7 @@
 package com.codingrecipe.board.repository;
 
 import com.codingrecipe.board.dto.BoardDTO;
+import com.codingrecipe.board.dto.BoardFileDTO;
 import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
@@ -12,8 +13,10 @@ import java.util.List;
 public class BoardRepository {
     //Mybatis 연계해야 자동으로 생성이 가능함
     private final SqlSessionTemplate sql;
-    public void save(BoardDTO boardDTO) {
+    public BoardDTO save(BoardDTO boardDTO)
+    {
         sql.insert("Board.save", boardDTO);
+        return boardDTO;
     }
 
     public List<BoardDTO> findAll()
@@ -44,5 +47,10 @@ public class BoardRepository {
     public void delete(Long id)
     {
         sql.delete("Board.delete", id);
+    }
+
+    public void saveFile(BoardFileDTO boardFileDTO)
+    {
+        sql.insert("Board.svaeFile", boardFileDTO);
     }
 }
