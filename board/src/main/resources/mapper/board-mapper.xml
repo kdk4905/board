@@ -39,5 +39,5 @@
     <insert id="savefile" parameterType="boardFile">
         insert into board_file_table(originalFileName, storedFileName, boardId)
         values (#{originalFileName}, #{storedFileName}, #{board})
-        </insert>
+    </insert>
 </mapper>
