@@ -53,4 +53,10 @@ public class BoardRepository {
     {
         sql.insert("Board.svaeFile", boardFileDTO);
     }
+
+    //0728 파일 조회 메서드
+    public BoardFileDTO findFile(Long id)
+    {
+        return sql.selectOne("Board.findFile", id);
+    }
 }
