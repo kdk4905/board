@@ -4,10 +4,10 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board" useGeneratedKeys="true" keyProperty="id">
+                                                                                # 07.29 파일을 불러오는 쿼리문
         insert into board_table(boardTitle, boardWriter, boardPass, boardContents, fileAttached)
         values(#{boardTitle}, #{boardWriter}, #{boardPass}, #{boardContents}, #{fileAttached})
     </insert>
-
     <select id="findAll" resultType="board">
 -- 쿼리 수정 --
 /*
@@ -25,6 +25,7 @@
 
     <select id="findById" parameterType="Long" resultType="board">
         select id, boardTitle, boardWriter, boardPass, boardContents, boardHits,
+                                                                        #파일 조회 태그
                date_format(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt, fileAttached
         from board_table where id=#{id}
     </select>
@@ -36,9 +37,10 @@
     <delete id="delete" parameterType="Long">
         delete from board_table where id=#{id}
     </delete>
-    <insert id="savefile" parameterType="boardFile">
+    <!-- 07.29 파일 조회 메서드 | 대소문자 이슈로 인해 에러 발생. svaefile -> savefile -> saveFile로 정정 -->
+    <insert id="saveFile" parameterType="boardFile">
         insert into board_file_table(originalFileName, storedFileName, boardId)
-        values (#{originalFileName}, #{storedFileName}, #{board})
+        values (#{originalFileName}, #{storedFileName}, #{boardId})
     </insert>
     <!-- 0728 파일 조회 메서드 구현 -->
     <!-- 게시글 id로 첨부파일 조회, 파일 미존재 시 null 반환 -->

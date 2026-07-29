@@ -51,7 +51,7 @@ public class BoardRepository {
 
     public void saveFile(BoardFileDTO boardFileDTO)
     {
-        sql.insert("Board.svaeFile", boardFileDTO);
+        sql.insert("Board.saveFile", boardFileDTO);
     }
 
     //0728 파일 조회 메서드

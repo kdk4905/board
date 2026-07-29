@@ -41,7 +41,10 @@
   </tr>
   <tr th:if="${board.fileAttached == 1}">
     <th>image</th>
-    <td th:each="boardFile: ${boardFileList}">
+    <!-- 07.29 단일 이미지 업로드 시 처리 코드 -->
+    <td th:if="${boardFile}">
+    <!-- 07.29 최종 완성본. 현재는 주석처리하기 -->
+    <!-- <td th:each="boardFile: ${boardFileList}"> -->
       <img th:src="@{|/upload/${boardFile.storedFileName}|}" alt="" width="200" height="200">
     </td>
   </tr>

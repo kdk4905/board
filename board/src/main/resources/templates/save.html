@@ -5,11 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/save" method="post">
+<!-- 07.29 파일 조회 화면 | enctype="multipart/form-data 추가 -->
+<form action="/save" method="post" enctype="multipart/form-data">
     제목 : <input type="text" name="boardTitle"><br>
     작성자 : <input type="text" name="boardWriter"><br>
     비밀번호 : <input type="text" name="boardPass"><br>
     내용 : <input type="text" name="boardContents"><br>
+    <!-- 07.29 파일 조회 화면 -->
+    파일 : <input type="file" name="boardFile"><br>
     <input type="submit" value="작성">
 </form>
 </body>
