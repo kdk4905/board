@@ -83,7 +83,7 @@ public class BoardService {
         boardRepository.delete(id);
     }
     //0728 파일 조회 메서드 구현
-    public BoardFileDTO findFile(Long id)
+    public List<BoardFileDTO> findFile(Long id)
     {
         return boardRepository.findFile(id);
     }

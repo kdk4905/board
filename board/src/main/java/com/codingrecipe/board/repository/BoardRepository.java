@@ -54,9 +54,9 @@ public class BoardRepository {
         sql.insert("Board.saveFile", boardFileDTO);
     }
 
-    //0728 파일 조회 메서드
-    public BoardFileDTO findFile(Long id)
+    //0730 다중 파일 조회 메서드
+    public List<BoardFileDTO> findFile(Long id)
     {
-        return sql.selectOne("Board.findFile", id);
+        return sql.selectList("Board.findFile", id);
     }
 }
