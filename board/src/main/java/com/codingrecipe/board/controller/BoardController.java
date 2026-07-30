@@ -65,7 +65,7 @@ public class BoardController {
             //BoardFileDTO boardFileDTO = boardService.findFile(id);
             //07.29 디버깅을 위한 로그 삽입. 문제 해결후 주석처리
             //System.out.println("boardFileDTO = " + boardFileDTO);
-            model.addAttribute("boardFile", boardFileDTOList);
+            model.addAttribute("boardFileList", boardFileDTOList);
         }
         return "detail";
     }
