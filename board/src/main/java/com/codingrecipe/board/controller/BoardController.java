@@ -60,10 +60,12 @@ public class BoardController {
         //0728 파일조회 메서드
         if (boardDTO.getFileAttached() == 1)
         {
-            BoardFileDTO boardFileDTO = boardService.findFile(id);
+            List<BoardFileDTO> boardFileDTOList = boardService.findFile(id);
+            //07.30 다중파일 처리를 위한 주석
+            //BoardFileDTO boardFileDTO = boardService.findFile(id);
             //07.29 디버깅을 위한 로그 삽입. 문제 해결후 주석처리
             //System.out.println("boardFileDTO = " + boardFileDTO);
-            model.addAttribute("boardFile", boardFileDTO);
+            model.addAttribute("boardFile", boardFileDTOList);
         }
         return "detail";
     }
