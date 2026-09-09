@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.io.IOException;
 import java.util.List;
 //유해성 0909
+//곽동곤 0909 19:16분
 @Controller
 @RequiredArgsConstructor
 public class BoardController {
